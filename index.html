@@ -7,21 +7,32 @@
     <title>Test External Link from Webview</title>
 </head>
 <body>
-    <script>
-        document.getElementById('btnWindowOpen').addEventListener('click', function(e){
-            e.preventDefault();
-            window.open("https://stackoverflow.com/questions/40452034/disable-zoom-in-wkwebview",  "mozillaWindow");
-        });
-    </script>
+    
     <div>
         <!-- <a href="https://stackoverflow.com/questions/40452034/disable-zoom-in-wkwebview" target="_safari">1-Test Target Safari Link</a><br /> 
-        <button id="btnWindowOpen">2-Test Window Open (button)</button><br />  
+        <br />  
         <a href="safari://app">3-Test open Safari App</a> <br />    
         <a href="chrome-extension://">4-Test Chrome Extension</a> <br />   -->
         Test scalable
+        <button id="myBtn">Alert</button> <br />
+        <button id="btnWindowOpen">2-Test Window Open (button)</button> <br />
+        <button id="btnReload">Reload Page</button> <br />
         <!-- <a href="instagram://">5-Instagram app link</a> <br /> -->
         <a href="twitter://">6-Twitter app link</a>    <br />
         <a href="itms-apps://itunes.apple.com/app/id389801252">7-App Store Link</a>
     </div>    
+    <script>
+        document.getElementById("myBtn").addEventListener("click", function() {
+            alert("Test alert");
+        });
+        document.getElementById('btnWindowOpen').addEventListener("click", function(e){
+            e.preventDefault();
+            window.open("https://stackoverflow.com/questions/40452034/disable-zoom-in-wkwebview",  "mozillaWindow");
+        });
+        document.getElementById("btnReload").addEventListener("click", function(){
+            console.log('test');
+            window.location.reload();
+        });
+    </script>
 </body>
 </html>
